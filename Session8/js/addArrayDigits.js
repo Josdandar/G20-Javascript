@@ -28,3 +28,5 @@ const sumarArray = (input)=> {
 
 sumarArray(arrays)
 console.log(sumarArray(arrays))
+
+/*La validacion de item instance of array es para ver si se esta entrando a un array, si fuera un numero o string no sumaria */
