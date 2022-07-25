@@ -84,6 +84,7 @@ const albumes = [
 /* Reduce takes 4 parameters and we also have to initialize its value at de end*/ 
 
 let album = document.getElementById("albums")
+
 // let template = albumes.reduce((acc, cv, index, array)=>{
 //     acc += `<div class="col">
 //     <div class="card">
