@@ -13,8 +13,8 @@ const containerDiv = document.getElementById("containerDiv")
 
 const clickToDo = clickButton.addEventListener("click", ()=>{
     containerDiv.innerHTML = `<div id="closeCard">
-    <button class="buttonClick">Eliminar</button>
-    <img src="https://codinginfinite.com/wp-content/uploads/2019/05/maxresdefault-1.jpg" >
+    <button class="buttonClick btn btn-danger">Eliminar</button>
+    <img class= "imgStyles" src="https://codinginfinite.com/wp-content/uploads/2019/05/maxresdefault-1.jpg" >
     </div>`;
 
     const hideOnClick = document.querySelector(".buttonClick")
@@ -60,5 +60,14 @@ button.addEventListener("click", ()=>{
  4. insertar html al holder cuando se detono el evento
  5. De alguna forma limpiar el holder despues de algunos segundos. hint -> setTimeout*/
 
- 
 
+const imgDiv = document.querySelector(".img-div")
+const mouseTarget = document.querySelector(".mouse_target")
+
+const timer = ()=>{
+    window.setTimeout("mouseover", 3000)
+    imgDiv.innerHTML = `<div>
+    <img class= "imgStyles" src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/12/Norway-In-February-cover-image.jpg" >
+    </div>`
+}
+mouseTarget.addEventListener("mouseover", (timer))
