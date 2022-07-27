@@ -328,11 +328,10 @@ let users = [
 
  /*Creando funcion que filtre por coincidencia en "name" "username" "email" */
 
-
+/*Creamos una funcion donde se filtra por nombre, usuario y correo y si recibe una letra que coincida dara un resultado */ 
 const filterUsers = (str) => {
-    console.log(str)
     let strFinal = str.toLowerCase()
-    let usuariosFiltrados = users.filter((user)=> {
+    let filteredUsers = users.filter((user)=> {
 
         if(
             user.name.toLocaleLowerCase().match(strFinal) ||
@@ -344,11 +343,24 @@ const filterUsers = (str) => {
 
     })
 
-    return usuariosFiltrados
+    return filteredUsers
 }
 
-console.log(users)
-let resultado = filterUsers('isa')
-console.log(resultado)
+let inputString = prompt("Please input a string")
+let userCoincidence = filterUsers(inputString)
 
+
+
+const buttonClick = document.querySelector(".find_user")
+const searchBar = document.querySelector(".input_text")
+const addUserCards = document.querySelector(".list_users")
+
+buttonClick.addEventListener("click", ()=>{
+  searchBar.addEventListener("input", (e)=>{
+    let toSearch = e.target.value
+    console.log(toSearch)
+    let resultSearch = filterUsers(toSearch)
+    console.log(resultSearch)
+  })
+})
 
