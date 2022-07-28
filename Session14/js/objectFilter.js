@@ -346,21 +346,25 @@ const filterUsers = (str) => {
     return filteredUsers
 }
 
-let inputString = prompt("Please input a string")
-let userCoincidence = filterUsers(inputString)
-
-
+/* Pasar el valor del input como parametro a la funcion filterusers y como resultado devuelve array imprimir una carta por cada elemento del array*/
 
 const buttonClick = document.querySelector(".find_user")
 const searchBar = document.querySelector(".input_text")
-const addUserCards = document.querySelector(".list_users")
+const addUserCards = document.querySelector("#list_users")
 
-buttonClick.addEventListener("click", ()=>{
-  searchBar.addEventListener("input", (e)=>{
-    let toSearch = e.target.value
-    console.log(toSearch)
-    let resultSearch = filterUsers(toSearch)
-    console.log(resultSearch)
-  })
+
+const inputValue = searchBar.addEventListener("input", (e)=>{
+  let value = e.target.value
+  let searchedValue = filterUsers(value)
+  console.log(searchedValue)
+  return searchedValue
 })
+
+/* searchedValue es un objeto, entonces acceder a propiedades necesarias y renderizar en html*/ 
+const buttonEvent = buttonClick.addEventListener("click",(inputValue)=>{
+  
+  
+})
+
+
 
