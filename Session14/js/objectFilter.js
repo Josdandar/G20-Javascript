@@ -338,11 +338,11 @@ const filterUsers = (str) => {
             user.username.toLocaleLowerCase().match(strFinal) ||
             user.email.toLocaleLowerCase().match(strFinal)
             ) {
-            return user
+            return true
         }
 
     })
-
+    
     return filteredUsers
 }
 
@@ -351,18 +351,28 @@ const filterUsers = (str) => {
 const buttonClick = document.querySelector(".find_user")
 const searchBar = document.querySelector(".input_text")
 const addUserCards = document.querySelector("#list_users")
+let resultValue
 
 
-const inputValue = searchBar.addEventListener("input", (e)=>{
-  let value = e.target.value
-  let searchedValue = filterUsers(value)
-  console.log(searchedValue)
-  return searchedValue
+
+searchBar.addEventListener("input", (e)=>{
+  resultValue = filterUsers(searchBar.value)
+  console.log(resultValue)
 })
 
+
 /* searchedValue es un objeto, entonces acceder a propiedades necesarias y renderizar en html*/ 
-const buttonEvent = buttonClick.addEventListener("click",(inputValue)=>{
-  
+/*Spread operator me deconstruye y permite trabajar con lo que hay dentro del array */
+/*Lo que me resulte almacenarlo en una variable para que no se sobreescriba*/
+buttonClick.addEventListener("click",(inputValue)=>{
+  let resultValueArray = []
+  resultValueArray = [...resultValue]
+  resultValueArray.forEach((item, index)=>{
+    console.log(resultValueArray)
+    addUserCards.innerHTML = `
+    <p> hola</p>
+    `
+  })
   
 })
 
