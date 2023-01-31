@@ -20,8 +20,15 @@ let koder = {
 }
 
 
-/* Agregar Go a la propiedad de languages*/
-koder.languages.push("Go")
+   
+koder.languages.push('Go')
+koder.level = 4
+delete koder.avatar
+koder.age = 30
+koder2 = {...koder}
+koder2 = koder 
+   
+console.log(koder)
+console.log(koder2)
 
-console.log(koder.languages)
 

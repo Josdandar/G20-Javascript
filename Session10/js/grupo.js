@@ -61,11 +61,9 @@ const salarios = {
 }
 
 function toList(input){
-    let toArray = Object.entries(input)
-    
-    toArray.forEach((item)=>{
-        console.log(item[1])
-    })
+    let toArray = Object.values(input);
+    console.log(toArray.sort());
+
     
     
 }
